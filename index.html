@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bodas · Índice</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Parisienne&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PARA AGREGAR UNA BODA NUEVA:
+   1. Copiá un <article class="card"> completo (buscá "NUEVA TARJETA" abajo)
+   2. Cambiá: nombres, fecha, lugar, y los dos href de los links
+   3. Pegalo dentro de <div class="grid"> ... </div>
+   ============================================================ */
+:root{
+  --cream:#FBF8F1;
+  --cream-deep:#F1ECDD;
+  --paper:#FFFFFF;
+  --olive:#78835A;
+  --olive-deep:#525D3C;
+  --olive-pale:#E1E7CF;
+  --ink:#332F22;
+  --ink-soft:#847E68;
+  --line: rgba(51,47,34,.16);
+  --shadow: 0 18px 45px rgba(51,47,34,.08);
+  --serif:'Cormorant Garamond', serif;
+  --script:'Parisienne', cursive;
+  --sans:'Jost', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+::selection{background:var(--olive-pale);color:var(--olive-deep);}
+
+.wrap{
+  max-width:920px;
+  margin:0 auto;
+  padding:64px 24px 90px;
+}
+
+/* ---------- header ---------- */
+header{
+  text-align:center;
+  margin-bottom:56px;
+  position:relative;
+}
+.eyebrow{
+  font-family:var(--sans);
+  font-size:.72rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--olive);
+  margin-bottom:14px;
+}
+h1{
+  font-family:var(--script);
+  font-weight:400;
+  font-size:3.4rem;
+  color:var(--olive-deep);
+  line-height:1;
+  margin-bottom:16px;
+}
+header p{
+  font-family:var(--serif);
+  font-size:1.15rem;
+  font-style:italic;
+  color:var(--ink-soft);
+  max-width:440px;
+  margin:0 auto;
+}
+.header-leaf{
+  width:38px;
+  margin:22px auto 0;
+  display:block;
+  opacity:.7;
+}
+
+/* ---------- grid de bodas ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));
+  gap:28px;
+}
+
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:38px 32px 32px;
+  position:relative;
+  box-shadow:var(--shadow);
+  text-align:center;
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 24px 55px rgba(51,47,34,.12);
+}
+.card-index{
+  position:absolute;
+  top:18px;
+  left:20px;
+  font-family:var(--serif);
+  font-size:.85rem;
+  font-style:italic;
+  color:var(--ink-soft);
+  letter-spacing:.02em;
+}
+.card-emblem{
+  width:34px;
+  margin:0 auto 14px;
+  opacity:.85;
+}
+.card-names{
+  font-family:var(--script);
+  font-size:2.2rem;
+  color:var(--olive-deep);
+  line-height:1;
+  margin-bottom:10px;
+}
+.card-date{
+  font-family:var(--serif);
+  font-size:1.05rem;
+  color:var(--ink-soft);
+  letter-spacing:.03em;
+  margin-bottom:4px;
+}
+.card-place{
+  font-family:var(--sans);
+  font-size:.78rem;
+  color:var(--ink-soft);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-bottom:26px;
+}
+.card-divider{
+  width:46px;
+  height:1px;
+  background:var(--line);
+  margin:0 auto 24px;
+}
+.card-links{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.card-link{
+  display:block;
+  font-family:var(--sans);
+  font-size:.82rem;
+  letter-spacing:.03em;
+  text-decoration:none;
+  color:var(--olive-deep);
+  background:var(--cream-deep);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:12px 18px;
+  transition:background .25s ease, color .25s ease, border-color .25s ease;
+}
+.card-link:hover{
+  background:var(--olive-deep);
+  color:var(--cream);
+  border-color:var(--olive-deep);
+}
+.card-link .tag{
+  display:block;
+  font-size:.68rem;
+  color:var(--olive);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  margin-bottom:2px;
+}
+.card-link:hover .tag{ color:var(--olive-pale); }
+
+/* ---------- placeholder para agregar la próxima ---------- */
+.card.add-new{
+  border-style:dashed;
+  box-shadow:none;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:var(--ink-soft);
+  min-height:280px;
+}
+.card.add-new p{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.05rem;
+  max-width:220px;
+}
+
+footer{
+  text-align:center;
+  margin-top:70px;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:.9rem;
+  color:var(--ink-soft);
+}
+
+@media (max-width:600px){
+  .wrap{ padding:48px 18px 70px; }
+  h1{ font-size:2.6rem; }
+  .grid{ grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Archivo</p>
+    <h1>Bodas</h1>
+    <p>Un lugar para reunir cada invitación que vamos armando.</p>
+    <svg class="header-leaf" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30,4 C14,10 6,24 8,40 C9,48 16,54 22,50 C18,58 24,60 30,54 C36,60 42,58 38,50 C44,54 51,48 52,40 C54,24 46,10 30,4 Z"
+        fill="none" stroke="#78835A" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </header>
+
+  <div class="grid">
+
+    <!-- ================= BODA 1 ================= -->
+    <article class="card">
+      <span class="card-index">N.º 01</span>
+      <svg class="card-emblem" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30,4 C14,10 6,24 8,40 C9,48 16,54 22,50 C18,58 24,60 30,54 C36,60 42,58 38,50 C44,54 51,48 52,40 C54,24 46,10 30,4 Z"
+          fill="none" stroke="#78835A" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+      <p class="card-names">Eugenia &amp; José</p>
+      <p class="card-date">02 · 04 · 2027</p>
+      <p class="card-place">Boda</p>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a class="card-link" href="invitacion-boda-euge-np.html">
+          <span class="tag">Sin mención de regalo</span>
+          Ver invitación
+        </a>
+        <a class="card-link" href="invitacion-boda-euge-p.html">
+          <span class="tag">Con tarjeta / regalo</span>
+          Ver invitación
+        </a>
+      </div>
+    </article>
+
+    <!-- ================= NUEVA TARJETA (copiá desde acá para agregar otra boda) =================
+    <article class="card">
+      <span class="card-index">N.º 02</span>
+      <svg class="card-emblem" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30,4 C14,10 6,24 8,40 C9,48 16,54 22,50 C18,58 24,60 30,54 C36,60 42,58 38,50 C44,54 51,48 52,40 C54,24 46,10 30,4 Z"
+          fill="none" stroke="#78835A" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+      <p class="card-names">Nombre &amp; Nombre</p>
+      <p class="card-date">DD · MM · AAAA</p>
+      <p class="card-place">Boda</p>
+      <div class="card-divider"></div>
+      <div class="card-links">
+        <a class="card-link" href="invitacion-boda-XXXX-np.html">
+          <span class="tag">Sin mención de regalo</span>
+          Ver invitación
+        </a>
+        <a class="card-link" href="invitacion-boda-XXXX-p.html">
+          <span class="tag">Con tarjeta / regalo</span>
+          Ver invitación
+        </a>
+      </div>
+    </article>
+    ============================================================================================= -->
+
+    <div class="card add-new">
+      <p>Acá va a aparecer la próxima boda que armemos</p>
+    </div>
+
+  </div>
+
+  <footer>hecho con cariño, una invitación a la vez 🤍</footer>
+
+</div>
+</body>
+</html>
